@@ -64,10 +64,13 @@ class Animal
         return result
     end
 
-    # def vet()
-    #     sql = "SELECT * FROM vets
-    #     WHERE "
-    # end
+    def vet()
+        sql = "SELECT * FROM vets
+        WHERE id = $1"
+        values = [@vet_id]
+        result = SqlRunner.run(sql, values).first
+        return Vet.new(result)
+    end
 
 
 
