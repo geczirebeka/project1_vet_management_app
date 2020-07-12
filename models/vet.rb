@@ -60,9 +60,9 @@ class Vet
         sql = "SELECT * FROM vets
         WHERE id = $1"
         values = [id]
-        result = SqlRunner.run(sql, values).first
-        vet = Vet.new(result)
-        return vet
+        vet = SqlRunner.run(sql, values).first
+        result = Vet.new(result)
+        return result
     end
 
     def pets()
