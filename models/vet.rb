@@ -27,6 +27,24 @@ class Vet
         SqlRunner.run(sql)
     end
 
+    def update()
+       sql = "UPDATE vets
+       SET
+       (first_name,
+       last_name) = 
+       ($1, $2)
+       WHERE id = $3"
+       values = [@first_name, @last_name, @id]
+       SqlRunner.run(sql, values) 
+    end
+
+    def delete()
+        sql = "DELETE FROM vets
+        WHERE id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
     def self.all()
         sql = "SELECT * FROM vets"
         vet_data = SqlRunner.run(sql)
@@ -37,5 +55,24 @@ class Vet
     def self.map_items(vet_data)
         return vet_data.map { |vet| Vet.new(vet)}
     end
+
+    def self.find(id)
+        sql = "SELECT * FROM vets
+        WHERE id = $1"
+        values = [id]
+        result = SqlRunner.run(sql, values).first
+        vet = Vet.new(result)
+        return vet
+    end
+
+    def pets()
+        sql = "SELECT * FROM animals
+        WHERE vet_id = $1"
+        values = [@id]
+        data = SqlRunner.run(sql, values)
+        result = map_items(data)
+        return result
+    end
+
 
 end
