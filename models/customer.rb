@@ -59,4 +59,13 @@ class Customer
         return result
     end
 
+    def animals()
+        sql = "SELECT * FROM animals
+        WHERE customer_id = $1"
+        values = [@id]
+        animal_data = SqlRunner.run(sql, values)
+        result = pet_data.map{ |animal| Animal.new(animal)}
+        return result
+    end
+
 end

@@ -65,7 +65,7 @@ class Vet
         return result
     end
 
-    def pets()
+    def animals()
         sql = "SELECT * FROM animals
         WHERE vet_id = $1"
         values = [@id]
