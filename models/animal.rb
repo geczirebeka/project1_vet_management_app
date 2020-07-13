@@ -20,12 +20,14 @@ class Animal
 
     def save()
         sql = "INSERT INTO animals (
-            name, dob, type, contact_details, treatment_notes, vet_id, customer_id)
+            name, dob, type, contact_details, treatment_notes, customer_id)
             VALUES
-            ($1, $2, $3, $4, $5, $6, $7)
+            ($1, $2, $3, $4, $5, $6)
             RETURNING id"
-            values = [@name, @dob, @type, @contact_details, @treatment_notes, @vet_id, @customer_id]
-            @id = SqlRunner.run(sql, values)[0]['id'].to_i
+            values = [@name, @dob, @type, @contact_details, @treatment_notes, @customer_id]
+            result = SqlRunner.run(sql, values)
+            id = result.first['id']
+            @id = id.to_i
     end
 
     def self.delete_all()
@@ -74,8 +76,8 @@ class Animal
         return Vet.new(result)
     end
 
-    def assign_to_vet()
-        
+    def assign_to_vet(vet_id)
+        @vet_id = vet_id
     end
 
 
