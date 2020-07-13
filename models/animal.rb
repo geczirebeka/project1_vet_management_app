@@ -74,7 +74,9 @@ class Animal
         return Vet.new(result)
     end
 
-
+    def assign_to_vet()
+        
+    end
 
 
 end

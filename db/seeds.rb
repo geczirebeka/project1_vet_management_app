@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('../models/vet')
 require_relative('../models/animal')
 require_relative('../models/customer')
@@ -26,4 +27,7 @@ animal4.save
 
 customer1 = Customer.new({'name' => 'Harry Gerome', 'address' => '10 Broughton Road EH75NB', 'tel' => '07649488798'})
 
-customer1.save
+customer1.save 
+
+binding.pry 
+nil
