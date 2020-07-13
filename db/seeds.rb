@@ -4,6 +4,7 @@ require_relative('../models/customer')
 
 Animal.delete_all
 Vet.delete_all
+Customer.delete_all
 
 vet1 = Vet.new({'first_name' => 'Steven', 'last_name' => 'Geczi'})
 vet2 = Vet.new({'first_name' => 'Maggie', 'last_name' => 'Pond'})

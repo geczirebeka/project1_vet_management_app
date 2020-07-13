@@ -36,7 +36,7 @@ class Animal
     def update()
         sql = "UPDATE animals
         SET
-        (name, dob, type, contact_details, treatment_notes, vet_id) =
+        (name, dob, type, contact_details, treatment_notes, vet_id, customer_id) =
         ($1, $2, $3, $4, $5, $6, $7)
         WHERE id = $8"
         values = [@name, @dob, @type, @contact_details, @treatment_notes, @vet_id, @customer_id, @id]
