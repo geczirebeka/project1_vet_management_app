@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./animal')
 
 class Vet
 
@@ -71,7 +72,7 @@ class Vet
         WHERE vet_id = $1"
         values = [@id]
         data = SqlRunner.run(sql, values)
-        result = map_items(data)
+        result = data.map {|animal| Animal.new(animal)}
         return result
     end
 

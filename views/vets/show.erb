@@ -1,4 +1,12 @@
 <h2><%= @vet.full_name %></h2>
 
+<h3>Animals:</h3>
+
+<ul>
+    <% @vet.animals.each do |animal| %>
+        <li><%= animal.name %></li>
+    <% end %>
+</ul>
+
 <a href="/vets/<%= @vet.id %>/edit">Edit</a>
 <form action="/vets/<%= @vet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
