@@ -9,7 +9,7 @@ get '/vets' do
     erb(:'vets/index')
 end
 
-# get '/vets/:id' do 
-#     @vet = Vet.find(params[:id])
-#     erb(:show)
-# end
+get '/vets/:id' do 
+    @vet = Vet.find(params[:id])
+    erb(:'vets/show')
+end

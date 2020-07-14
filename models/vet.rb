@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Vet
 
-    attr_reader :id, :first_name, :last_name
+    attr_reader :id
+    attr_accessor :first_name, :last_name
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -61,7 +62,7 @@ class Vet
         WHERE id = $1"
         values = [id]
         vet = SqlRunner.run(sql, values).first
-        result = Vet.new(result)
+        result = Vet.new(vet)
         return result
     end
 
