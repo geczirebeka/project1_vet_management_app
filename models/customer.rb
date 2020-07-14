@@ -64,7 +64,7 @@ class Customer
         WHERE customer_id = $1"
         values = [@id]
         animal_data = SqlRunner.run(sql, values)
-        result = animal_data.map{ |animal| Animal.new(animal)}
+        result = animal_data.map { |customer| Customer.new(customer)}
         return result
     end
 
