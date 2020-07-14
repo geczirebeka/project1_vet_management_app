@@ -6,9 +6,17 @@
     <title>Paws Vet Surgery</title>
 </head>
 <body>
-    <nav id="menu">
-        <li class="menu-item"><a href='/vets'>Vets</a></li>
-    </nav>
-    <%= yield %>   
+    <main class="flex flex--row">
+        <nav id="menu">
+            <ul>
+                <li class="menu-item"><a href='/vets'>Vets</a></li>
+                <li class="menu-item"><a href='/customers'>Customers</a></li>
+                <li class="menu=item"><a href='/animals'>Animals</a></li>
+            </ul>
+        </nav>
+        <section id="content">
+        <%= yield %>  
+        </section> 
+    </main>
 </body>
 </html>

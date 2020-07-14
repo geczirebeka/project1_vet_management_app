@@ -46,7 +46,7 @@ class Customer
     def self.all()
         sql = "SELECT * FROM customers"
         customers = SqlRunner.run(sql)
-        result = customer.map { |customer| Customer.new(customer)}
+        result = customers.map { |customer| Customer.new(customer)}
         return result
     end
 
@@ -64,7 +64,7 @@ class Customer
         WHERE customer_id = $1"
         values = [@id]
         animal_data = SqlRunner.run(sql, values)
-        result = pet_data.map{ |animal| Animal.new(animal)}
+        result = animal_data.map{ |animal| Animal.new(animal)}
         return result
     end
 
