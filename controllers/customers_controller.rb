@@ -35,8 +35,8 @@ post '/customers/:id' do
     redirect to '/customers'
 end
 
-post '/vets/:id/delete' do
-    vet = Vet.find( params[:id] )
-    vet.delete()
-    redirect to '/vets'
+post '/customers/:id/delete' do
+    customer = Customer.find( params[:id] )
+    customer.delete()
+    redirect to '/customers'
 end
