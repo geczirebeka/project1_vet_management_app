@@ -9,7 +9,17 @@ get '/customers' do
     erb(:'customers/index')
 end
 
+get '/customers/new' do
+    erb(:'customers/new')
+end
+
 get '/customers/:id' do 
     @customer = Customer.find(params[:id])
     erb(:'customers/show')
+end
+
+post '/customers' do 
+    @customer = Customer.new(params)
+    @customer.save
+    erb(:create)
 end

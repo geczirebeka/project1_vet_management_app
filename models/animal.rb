@@ -76,6 +76,14 @@ class Animal
         return Vet.new(result)
     end
 
+    def customer()
+        sql = "SELECT * FROM customers
+        WHERE id = $1"
+        values = [@customer_id]
+        result = SqlRunner.run(sql, values).first
+        return Customer.new(result)
+    end
+
     def assign_to_vet(vet_id)
         @vet_id = vet_id
     end

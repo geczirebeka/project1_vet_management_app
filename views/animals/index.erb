@@ -1,0 +1,7 @@
+<h1>Animals</h1>
+
+<% for animal in @animals %>
+    <p>Name: <%= animal.name %></p>
+    <p><a href="/animals/<%=animal.id%>">Show Animal</a></p>
+    <hr />
+<% end %>

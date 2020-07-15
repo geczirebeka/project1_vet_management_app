@@ -9,22 +9,34 @@ get '/vets' do
     erb(:'vets/index')
 end
 
-# get '/vets/new' do
-
-# end
+get '/vets/new' do
+    erb(:'vets/new')
+end
 
 get '/vets/:id' do 
     @vet = Vet.find(params[:id])
     erb(:'vets/show')
 end
 
-get '/vets/:id/edit' do
-    @vets = Vet.find(params[:id])
-    erb(:'vets/edit')
+post '/vets' do 
+    @vet = Vet.new(params)
+    @vet.save
+    erb(:'vets/create')
 end
 
-# post '/vets/:id' do 
-#     vet = Vet.new(params)
-#     vet.update 
-#     redirect to "/vets/#{params['id']}"
-# end
+get '/vets/:id/edit' do
+    @vet = Vet.find(params[:id])
+    erb(:'vets/edit')
+end
+  
+post '/vets/:id' do 
+    vet = Vet.new(params)
+    vet.update 
+    redirect to '/vets'
+end
+
+post '/vets/:id/delete' do
+    vet = Vet.find( params[:id] )
+    vet.delete()
+    redirect to '/vets'
+end
