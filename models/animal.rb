@@ -88,5 +88,9 @@ class Animal
         @vet_id = vet_id
     end
 
+    def unassign()
+        @vet_id = nil
+    end
+
 
 end
