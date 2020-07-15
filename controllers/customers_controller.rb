@@ -21,5 +21,22 @@ end
 post '/customers' do 
     @customer = Customer.new(params)
     @customer.save
-    erb(:create)
+    erb(:'customers/create')
+end
+
+get '/customers/:id/edit' do
+    @customer = Customer.find(params[:id])
+    erb(:'customers/edit')
+end
+  
+post '/customers/:id' do 
+    customer = Customer.new(params)
+    customer.update 
+    redirect to '/customers'
+end
+
+post '/vets/:id/delete' do
+    vet = Vet.find( params[:id] )
+    vet.delete()
+    redirect to '/vets'
 end
