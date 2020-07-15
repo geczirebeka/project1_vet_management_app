@@ -26,7 +26,13 @@ post '/animals' do
     erb(:'animals/create')
 end
 
-# get '/animals/:id/edit' do
-#     @animal = Animal.find(params[:id])
-#     erb(:'animals/edit')
-# end
+get '/animals/:id/edit' do
+    @animal = Animal.find(params[:id])
+    erb(:'animals/edit')
+end
+
+post '/animals/:id' do 
+    animal = Animal.new(params)
+    animal.update 
+    redirect to '/animals'
+end
