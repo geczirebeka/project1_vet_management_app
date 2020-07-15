@@ -6,14 +6,18 @@ require_relative('../models/animal.rb')
 require_relative('../models/customer.rb')
 require_relative('../models/vet.rb')
 
-class TestAnimal < Minitest::Test
+class AnimalTest < Minitest::Test
 
     def setup
         @animal = Animal.new("Mango", "04/04/2020", "dog", "07649488798", "first set of injections done", "customer1.id")
     end
 
-    def test_assign_to_vet
+    def test_assign_to_vet(vet_id)
         assert_equal()
+    end
+
+    def test_unassign()
+        assert_equal
     end
 
 end
