@@ -20,11 +20,11 @@ class Animal
 
     def save()
         sql = "INSERT INTO animals (
-            name, dob, type, contact_details, treatment_notes, customer_id)
+            name, dob, type, contact_details, treatment_notes, customer_id, vet_id)
             VALUES
-            ($1, $2, $3, $4, $5, $6)
+            ($1, $2, $3, $4, $5, $6, $7)
             RETURNING id"
-            values = [@name, @dob, @type, @contact_details, @treatment_notes, @customer_id]
+            values = [@name, @dob, @type, @contact_details, @treatment_notes, @customer_id, @vet_id]
             result = SqlRunner.run(sql, values)
             id = result.first['id']
             @id = id.to_i
