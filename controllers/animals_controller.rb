@@ -27,6 +27,8 @@ post '/animals' do
 end
 
 get '/animals/:id/edit' do
+    @customers = Customer.all
+    @vets = Vet.all
     @animal = Animal.find(params[:id])
     erb(:'animals/edit')
 end
