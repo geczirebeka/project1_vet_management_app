@@ -38,3 +38,9 @@ post '/animals/:id' do
     animal.update 
     redirect to '/animals'
 end
+
+post '/animals/:id/delete' do
+    animal = Animal.find( params[:id] )
+    animal.delete()
+    redirect to '/animals'
+end
