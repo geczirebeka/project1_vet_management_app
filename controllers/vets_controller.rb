@@ -36,11 +36,7 @@ post '/vets/:id' do
 end
 
 post '/vets/:id/delete' do
-    @vet = Vet.new(params)
-    for animal in @vet.animals
-        animal.unassign()
-        animal.update()
-    end
-    @vet.delete()
+    vet = Vet.find(params[:id])
+    vet.delete()
     redirect to '/vets'
 end

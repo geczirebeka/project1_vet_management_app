@@ -24,23 +24,15 @@ customer1.save
 customer2.save
 customer3.save
 
-animal1 = Animal.new({'name' => 'Mango', 'dob' => '04/04/2020', 'type' => 'dog', 'contact_details' => '07649488798', 'treatment_notes' => 'first set of injections done', 'customer_id' => customer1.id})
-animal2 = Animal.new({'name' => 'Cheeky', 'dob' => '15/10/2011', 'type' => 'dog', 'contact_details' => '07145986245', 'treatment_notes' => 'joint problems', 'customer_id' => customer2.id})
-animal3 = Animal.new({'name' => 'Sparrow', 'dob' => '06/08/2014', 'type' => 'cat', 'contact_details' => '07984780223', 'treatment_notes' => 'infected by ticks', 'customer_id' => customer3.id})
-animal4 = Animal.new({'name' => 'Tiny Feet', 'dob' => '28/07/2003', 'type' => 'tortoise', 'contact_details' => '07649488798', 'treatment_notes' => 'refuses to eat', 'customer_id' => customer1.id})
+animal1 = Animal.new({'name' => 'Mango', 'dob' => '04/04/2020', 'type' => 'dog', 'treatment_notes' => 'first set of injections done', 'customer_id' => customer1.id, 'vet_id' => vet1.id})
+animal2 = Animal.new({'name' => 'Cheeky', 'dob' => '15/10/2011', 'type' => 'dog', 'treatment_notes' => 'joint problems', 'customer_id' => customer2.id, 'vet_id' => vet2.id})
+animal3 = Animal.new({'name' => 'Sparrow', 'dob' => '06/08/2014', 'type' => 'cat', 'treatment_notes' => 'infected by ticks', 'customer_id' => customer3.id, 'vet_id' => vet3.id})
+animal4 = Animal.new({'name' => 'Tiny Feet', 'dob' => '28/07/2003', 'type' => 'tortoise', 'treatment_notes' => 'refuses to eat', 'customer_id' => customer1.id, 'vet_id' => vet1.id})
 
 animal1.save
 animal2.save
 animal3.save
 animal4.save
-animals = [animal1, animal2, animal3, animal4]
-
-
-animal1.assign_to_vet(vet1.id)
-animal2.assign_to_vet(vet2.id)
-animal3.assign_to_vet(vet1.id)
-animal4.assign_to_vet(vet3.id)
-animals.each { |animal| animal.update() }
 
 binding.pry 
 nil
