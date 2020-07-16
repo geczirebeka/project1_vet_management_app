@@ -24,8 +24,8 @@ CRUD actions for vets / animals - remember the user - what would they want to se
 
 Technologies Used:
 
--Ruby
--PostgreSQL
--Sinatra
--HTML
+-Ruby,
+-PostgreSQL,
+-Sinatra,
+-HTML,
 -CSS(for further changes)
