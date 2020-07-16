@@ -1,5 +1,15 @@
 # project1_vet_management_app
+
 Vet Management App
+
+This is a Vet Management App that vetenirary practices can use to track their animals, customers and vets present at the practice.
+
+Running Instructions:
+
+To use this app you need to first clone it and then in the terminal first drop the database vet_manage, then create the database vet_manage. Next you need to run psql -d vet_manage -f db/vet_management.sql in your terminal so the database is running. When you run ruby app.rb the web page can be accessed through localhost/4567. On the web page you can see all the vets, customers and animals in the practice which can all be edited or deleted and new ones can be created.
+
+Brief:
+
 A veterinary practice has approached you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet.
 
 MVP
@@ -11,10 +21,11 @@ Contact details for the owner
 Treatment notes
 Be able to assign animals to vets
 CRUD actions for vets / animals - remember the user - what would they want to see on each View? What Views should there be?
-Possible Extensions
-Mark owners as being registered/unregistered with the Vet. unregistered owners won't be able to add any more animals.
-If an owner has multiple animals we don't want to keep updating contact details separately for each pet. Extend your application to reflect that an owner can have many pets and to more sensibly keep track of owners' details (avoiding repetition / inconsistencies)
-Handle check-in / check-out dates
-Let the practice see all animals currently in the practice (today's date is between the check-in and check-out?)
-Sometimes an owner does not know the DOB. Allow them to enter an age instead. Try and make sure this always up to date - ie if they visit again a year from now a 3 yr old dog is now 4.
-Add extra functionality of your choosing - assigning treatments, a more comprehensive way of maintaining treatment notes over time. Appointments. Pricing / billing.
+
+Technologies Used:
+
+-Ruby,
+-PostgreSQL,
+-Sinatra,
+-HTML,
+-CSS(for further changes)
